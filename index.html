@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RATIFICACION</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav id="navbar" class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <span class="navbar-brand mb-0 h1">
+                🐭 IFICACION
+            </span>
+
+            <div class="d-flex gap-2">
+
+                <button
+                    id="btnNavDatos"
+                    class="btn btn-outline-light btn-sm"
+                    type="button"
+                >
+                    Datos
+                </button>
+
+                <button
+                    id="btnNavFormato"
+                    class="btn btn-outline-light btn-sm"
+                    type="button"
+                    disabled
+                >
+                    Formato
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ========================= -->
+    <!-- SECCIÓN DATOS -->
+    <!-- ========================= -->
+
+    <section id="seccionDatos" class="container my-5">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h2 class="text-center mb-4">
+                    Datos del documento
+                </h2>
+
+                <div class="row g-3">
+
+                    <!-- Cesionario -->
+                    <div class="col-md-6">
+                        <label for="nombreCesionario" class="form-label">
+                            Nombre del cesionario
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombreCesionario"
+                            class="form-control"
+                            placeholder="Ej. ROGELIO ROJAS REYES"
+                        >
+                    </div>
+
+
+                    <!-- Domicilio -->
+                    <div class="col-12">
+                        <label for="domicilio" class="form-label">
+                            Domicilio
+                        </label>
+
+                        <input
+                            type="text"
+                            id="domicilio"
+                            class="form-control"
+                            placeholder="Ej. CUAUHTEMOC NO. 4 COL. REFORMA TLALMIMILOLPAN C. P 52055 LERMA, MEXICO"
+                        >
+                    </div>
+
+
+                    <!-- Concesión -->
+                    <div class="col-md-6">
+                        <label for="concesion" class="form-label">
+                            Número de concesión
+                        </label>
+
+                        <input
+                            type="text"
+                            id="concesion"
+                            class="form-control"
+                            placeholder="Ej. CAS0537CA850166357"
+                        >
+                    </div>
+
+
+                    <!-- Clave elector cesionario -->
+                    <div class="col-md-6">
+                        <label for="claveElectorCesionario" class="form-label">
+                            Clave de elector del cesionario
+                        </label>
+
+                        <input
+                            type="text"
+                            id="claveElectorCesionario"
+                            class="form-control"
+                            placeholder="Ej. RJRYRG89100815H000"
+                        >
+                    </div>
+
+
+                    <!-- Fecha de cesión -->
+                    <div class="col-md-6">
+                        <label for="fechaCesion" class="form-label">
+                            Fecha de la cesión
+                        </label>
+
+                        <input
+                            type="date"
+                            id="fechaCesion"
+                            class="form-control"
+                        >
+                    </div>
+
+
+                    <!-- Cedente -->
+                    <div class="col-md-6">
+                        <label for="nombreCedente" class="form-label">
+                            Nombre del cedente
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombreCedente"
+                            class="form-control"
+                            placeholder="Ej. JULIA MARTINEZ MARTINEZ"
+                        >
+                    </div>
+
+
+                    <!-- Clave elector cedente -->
+                    <div class="col-md-6">
+                        <label for="claveElectorCedente" class="form-label">
+                            Clave de elector del cedente
+                        </label>
+
+                        <input
+                            type="text"
+                            id="claveElectorCedente"
+                            class="form-control"
+                            placeholder="Ej. MRMRJL76121015M500"
+                        >
+                    </div>
+
+
+                    <!-- Fecha del formato -->
+                    <div class="col-md-6">
+                        <label for="fechaFormato" class="form-label">
+                            Fecha en la que se realiza el formato
+                        </label>
+
+                        <input
+                            type="date"
+                            id="fechaFormato"
+                            class="form-control"
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÓN SIGUIENTE -->
+
+                <div class="text-center mt-4">
+
+                    <button
+                        id="btnSiguiente"
+                        class="btn btn-primary px-5"
+                        type="button"
+                    >
+                        Siguiente
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- SECCIÓN FORMATO -->
+    <!-- ========================= -->
+
+    <section
+        id="seccionFormato"
+        class="container my-5 d-none"
+    >
+
+        <div class="d-flex justify-content-end mb-3">
+
+            <button
+                id="btnImprimir"
+                class="btn btn-dark"
+                type="button"
+            >
+                🖨 Imprimir
+            </button>
+
+        </div>
+
+
+        <!-- DOCUMENTO -->
+
+        <div id="documento" class="documento">
+
+            <!-- FECHA Y LUGAR -->
+
+            <p class="text-end">
+                TLALNEPANTLA DE BAZ, ESTADO DE MÉXICO A
+                <span id="salidaFechaFormato" class="dato"></span>.
+            </p>
+
+
+            <p>
+                <b>DIRECTOR GENERAL DEL REGISTRO ESTATAL DE TRANSPORTE PÚBLICO
+                <br>
+                PRESENTE.</b>
+            </p>
+
+
+            <!-- PÁRRAFO 1 -->
+
+            <p>
+                Quien suscribe el C.
+                <span id="salidaNombreCesionario" class="dato"></span>,
+                por mi propio derecho con domicilio en
+                <span id="salidaDomicilio" class="dato"></span>;
+                como <B>CESIONARIO</B> de la concesión número
+                <span id="salidaConcesion" class="dato"></span>
+                acredito mi personalidad mediante credencial de elector
+                con <b>CLAVE DE ELECTOR</b> 
+                <span id="salidaClaveCesionario" class="dato"></span>.
+            </p>
+
+
+            <!-- PÁRRAFO 2 -->
+
+            <p>
+                Respetuosamente me dirijo a usted para manifestar lo siguiente
+                bajo protesta de decir verdad y siendo conocedor de las
+                penalidades que puedo ser acreedor en caso de falsedad de
+                declaración, manifiesto que, en fecha
+                <span id="salidaFechaCesion" class="dato"></span>.
+            </p>
+
+
+            <!-- PÁRRAFO 3 -->
+
+            <p>
+                Celebre un contrato de cesión de derechos sobre la concesión
+                número de clave
+                <span id="salidaConcesion2" class="dato"></span>
+                con el C.
+                <span id="salidaNombreCedente" class="dato"></span>
+                como <b>CEDENTE</b> quien se identificó con credencial de elector
+                con <b>CLAVE DE ELECTOR</b>
+                <span id="salidaClaveCedente" class="dato"></span>,
+                y el que suscribe como <b>CESIONARIO</b>, se anexa el contrato de
+                cesión de derechos y las identificaciones para pronta
+                referencia.
+            </p>
+
+
+            <!-- PÁRRAFO 4 -->
+
+            <p>
+                Por lo dispuesto en el Periódico Oficial (Gaceta del Gobierno)
+                Registro DGC No 001 1021 de fecha <b>diecinueve</b> de <b>diciembre</b> del
+                <b>dos mil diecinueve</b> donde se estipula los requisitos señalados
+                en el <b>"Índice del expediente de concesiones de transporte
+                público, sus movimientos adicionales y autorizaciones"</b>, una
+                vez cumpliendo cabalmente los requisitos estipulados para el
+                trámite solicitado, anexo la presente carta responsiva al
+                expediente digital que obra en el sistema PORTyS.
+            </p>
+
+
+            <!-- PÁRRAFO 5 -->
+
+            <p>
+                Expuesto lo anterior, solicito de no existir inconveniente me
+                sean transferidos a mi nombre los derechos de la concesión
+                número de clave
+                <span id="salidaConcesion3" class="dato"></span>.
+            </p>
+
+
+            <!-- PÁRRAFO 6 -->
+
+            <p>
+                Toda vez que en el contrato de cesión de derechos antes
+                mencionado el CEDENTE plasmo su firma en dicho contrato,
+                dejando a salvo las facultades administrativas y/o legales
+                que esta autoridad considere necesarias.
+            </p>
+
+
+            <!-- PÁRRAFO 7 -->
+
+            <p>
+                Liberando de toda obligación y responsabilidad administrativa
+                y/o legal a la <b>DIRECCIÓN GENERAL DEL REGISTRO ESTATAL DEL
+                REGISTRO ESTATAL DE TRANSPORTE PÚBLICO, DEPENDIENTE DE LA
+                SECRETARIA DE MOVILIDAD DEL ESTADO DE MÉXICO</b>, así como, de
+                las áreas y/o unidades administrativas que la integran.
+            </p>
+
+
+            <!-- FINAL -->
+
+            <p>
+                Sin más por el momento, quedo de Usted.
+            </p>
+
+            <br>
+            <br>
+            <p class="text-center">
+                PROTESTO LO NECESARIO
+            </p>
+            
+            <br>
+            <p class="text-center"> _______________________ </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- JS -->
+    <script src="./js/app.js"></script>
+
+</body>
+</html>
