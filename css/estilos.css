@@ -1,0 +1,115 @@
+/* =========================================
+   ESTILOS GENERALES
+========================================= */
+
+body {
+    background-color: #f4f6f9;
+    font-family: Arial;
+}
+
+
+/* =========================================
+   SECCIÓN DEL DOCUMENTO
+========================================= */
+
+.documento {
+    background-color: white;
+    padding: 60px 70px;
+    min-height: 1000px;
+
+    max-width: 900px;
+    margin: 0 auto;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+    color: #000;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    text-align: justify;
+}
+
+
+/* =========================================
+   DATOS INGRESADOS POR EL USUARIO
+========================================= */
+
+.dato {
+    color: blue;
+    font-weight: normal;
+}
+
+
+/* =========================================
+   PÁRRAFOS
+========================================= */
+
+.documento p {
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+/* =========================================
+   IMPRESIÓN
+========================================= */
+
+@media print {
+
+    /* Ocultar navbar */
+    #navbar {
+        display: none !important;
+    }
+
+    /* Ocultar botón imprimir */
+    #btnImprimir {
+        display: none !important;
+    }
+
+    /* Ocultar fondo */
+    body {
+        background: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Documento */
+    .documento {
+        box-shadow: none;
+        max-width: none;
+
+        width: 100%;
+
+        padding: 0;
+
+        margin: 0;
+
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    /* Quitar espacios del container */
+    #seccionFormato {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .documento {
+        padding: 30px 25px;
+        font-size: 15px;
+    }
+
+}
